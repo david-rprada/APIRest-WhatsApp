@@ -4,6 +4,7 @@ Registro de cambios API Rest WhatsApp
 
 Version 1.2.0
 
+* DevOps: Añadir control de código fuente en GitHub
 * Feature: Pasar petición GET CrearMensaje a petición POST con un objeto json
 * Feature: Añadir operación POST para enviar una remesa completa de mensajes. Utilizar package Joi para validación de objeto json de entrada.
 * Feature: Añadir operación DELETE para borrar una remesa completa de mensajes
