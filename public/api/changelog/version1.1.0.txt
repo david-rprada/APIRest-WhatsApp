@@ -4,9 +4,9 @@ Registro de cambios API Rest WhatsApp
 
 Version 1.1.0
 
-* Feature: Añadir a la url /api/ a nivel raiz antes de cualquier otro elemento de la url. Ejemplo: mi_url/api/GetAllMensajes
-* Bug fix: Enviar códigos de estado (200, 4*, 500) en las cabeceras de las respuestas de la API.
-* Feature: Crear mensaje de WhatsApp con media file opcional
-* Feature: Respuestas automáticas mediante un webhook url para responder a los mensajes que nos envíe el usuario en WhatsApp
-* Mejora en la documentación de la API Rest
+* chore: Añadir a la url /api/ a nivel raiz antes de cualquier otro elemento de la url. Ejemplo: mi_url/api/GetAllMensajes
+* fix: Enviar códigos de estado (200, 4*, 500) en las cabeceras de las respuestas de la API.
+* feat: Crear mensaje de WhatsApp con media file opcional
+* feat: Respuestas automáticas mediante un webhook url para responder a los mensajes que nos envíe el usuario en WhatsApp
+* docs: Mejora en la documentación de la API Rest
 
