@@ -5,9 +5,9 @@ Registro de cambios API Rest WhatsApp
 Version 1.2.0
 
 * chore: Añadir control de código fuente en GitHub
+* chore: Añadir enrutador (router) a las peticiones <mi_url>/api para separar lógica MVC en la app
+* chore: Añadir controlador para las operaciones sobre WhatsApp y separar lógica MVC 
 * feat: Pasar petición GET CrearMensaje a petición POST con un objeto json
 * feat: Añadir operación POST para enviar una remesa completa de mensajes. Utilizar package Joi para validación de objeto json de entrada.
 * feat: Añadir operación DELETE para borrar una remesa completa de mensajes
 * docs: Añadir a la documentación index.html de la API, las nuevas operaciones anteriores.
-* feat: Añadir protocolo https a nuestra API con certificados openSSL. 
-* chore: Probar si en local es posible utilizar las url variables de ngrok con el protocolo https.
