@@ -1,0 +1,10 @@
+
+Registro de cambios API Rest WhatsApp
+-------------------------------------
+
+Version 1.3.0
+
+* DevOps: Añadir control de código fuente en GitHub
+* DevOps: Automatizar CI/CD con GitHub Actions 
+* DevOps: Desplegar la API en un contenedor Docker
+* Feature: obtener número de versión actual de package.json

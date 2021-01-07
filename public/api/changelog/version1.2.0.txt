@@ -1,0 +1,12 @@
+
+Registro de cambios API Rest WhatsApp
+-------------------------------------
+
+Version 1.2.0
+
+* Feature: Pasar petición GET CrearMensaje a petición POST con un objeto json
+* Feature: Añadir operación POST para enviar una remesa completa de mensajes. Utilizar package Joi para validación de objeto json de entrada.
+* Feature: Añadir operación DELETE para borrar una remesa completa de mensajes
+* Añadir a la documentación index.html de la API, las nuevas operaciones anteriores.
+* Feature: Añadir protocolo https a nuestra API con certificados openSSL. 
+* Test: Probar si en local es posible utilizar las url variables de ngrok con el protocolo https.
