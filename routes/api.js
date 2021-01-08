@@ -7,7 +7,7 @@ const path = require('path');
 
 // Requerimos solo el objeto Router de express y lo instanciamos
 const { Router } = require('express');
-const router = Router();
+const router = new Router();
 
 // Cargamos variables de configuración del archivo .env
 dotenv.config();
