@@ -3,8 +3,8 @@ API Rest para mensajería con WhatsApp. Hecho con Node.js + Twilio
 
 Para instalar en local:
 
-1) Instalar node.js
-2) Instalar todas las dependencias:
+1) Descargar e instalar node.js https://nodejs.org/es/download/
+2) Instalar todas las dependencias de esta app:
 
 ```
 npm install
