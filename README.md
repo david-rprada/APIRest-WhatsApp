@@ -19,6 +19,6 @@ npm run dev
 4) Ejecutar en el navegador la API Rest: http://localhost:3000/api
 
 
-![](images/Captura1.png)
+![](images/Captura%201.png)
 
-![](images/Captura2.png)
+![](images/Captura%202.png)
