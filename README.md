@@ -17,3 +17,6 @@ npm run dev
 ```
 
 4) Ejecutar en el navegador la API Rest: http://localhost:3000/api
+
+
+
