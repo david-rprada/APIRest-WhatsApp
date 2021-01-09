@@ -14,18 +14,11 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = new Twilio(accountSid, authToken);
 
 /**
- * @class WhatsappController
+ * @class WhatsAppController
  * @description class que implementará la mensajería con WhatsApp
  */
-class WhatsappController {
-  /**
-   * @memberof WhatsappController
-   * @param {object} req - Request sent to the route
-   * @param {object} res - Response sent from the controller
-   * @param {object} next - Error handler
-   * @returns {object} - object representing response message
-   */
-
+class WhatsAppController {
+  
   static async getMensaje(req, res) {
     
     client.messages(req.params.sid).fetch()
@@ -106,4 +99,4 @@ class WhatsappController {
     }
 }
 
-module.exports = WhatsappController;
+module.exports = WhatsAppController;
