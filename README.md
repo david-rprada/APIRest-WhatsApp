@@ -1,5 +1,7 @@
 # APIRest-WhatsApp
-API Rest para mensajería con WhatsApp. Hecho con Node.js + Twilio
+API Rest para mensajería con WhatsApp. Hecho con Node.js + Twilio.
+
+La API está en desarrollo, siendo la versión actual la 1.1.0
 
 Para instalar en local:
 
@@ -9,14 +11,16 @@ Para instalar en local:
 ```
 npm install
 ```
+3) Pon tus credenciales de Twilio en el archivo .env.
+   Se incluye .env.example
 
-3) Iniciar el web server:
+4) Iniciar el web server:
 
 ```
 npm run dev
 ```
 
-4) Ejecutar en el navegador la API Rest: http://localhost:3000/api
+5) Ejecutar en el navegador la API Rest: http://localhost:3000/api
 
 
 ![](images/Captura%201.png)
