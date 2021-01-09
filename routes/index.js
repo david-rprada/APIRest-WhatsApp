@@ -6,7 +6,7 @@
 const favicon = require('serve-favicon');
 const path = require('path');
 
-// Requerimos solo el objeto Router de express y lo instanciamos
+// Requerimos solo los objetos { Router , static } (destructuring) de express y lo instanciamos
 const { Router, static } = require('express');
 const router = new Router();
 const expressStatic = new static(path.resolve('./public/api/changelog'));
@@ -18,11 +18,11 @@ const apiRouter = require('./api');
 router.use('/:var(api)?', apiRouter);
 
 // Otros ejemplos
-// Le indicamos al router que utilice el router usersRouter para las url: /users
-//router.use('/users', usersRouter);
+// Le indicamos al router que utilice el router usersRouter para las url: /sms
+//router.use('/sms', smsRouter);
 
-// Le indicamos al router que utilice el router productsRouter para las url: /users
-//router.use('/products', productsRouter);
+// Le indicamos al router que utilice el router productsRouter para las url: /email
+//router.use('/emails', emailsRouter);
 
 //#region  Middleware general
 // Servimos el favicon
