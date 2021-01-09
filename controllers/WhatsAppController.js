@@ -1,10 +1,6 @@
 
 // Importamos módulos
-const dotenv = require('dotenv');
 const Twilio = require('twilio');
-
-// Cargamos variables de configuración del archivo .env
-dotenv.config();
 
 // Leemos credenciales de Twilio
 const accountSid = process.env.TWILIO_ACCOUNT_SID;

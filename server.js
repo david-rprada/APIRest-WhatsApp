@@ -1,3 +1,12 @@
+// Importar módulos
+const dotenv = require('dotenv');
+
+// Cargamos variables de entorno del archivo .env
+dotenv.config();
+
+// Set del puerto del web server al establecido por variable de entorno o por defecto 3000 
+const puerto = process.env.PORT || 3000;
+
 // Incluimos los módulos necesarios
 const express = require('express');
 
@@ -9,9 +18,6 @@ const routerApp = require('./routes');
 
 // Indicamos al web server que utilice el router con las rutas definidas en él
 app.use(routerApp);
-
-// Set del puerto del web server al establecido por variable de entorno o por defecto 3000 
-const puerto = process.env.PORT || 3000;
 
 // Iniciar el web server de Express en el puerto establecido en las variables de entorno o por defecto 3000
 app.listen(puerto, () => {

@@ -31,7 +31,7 @@ router.use(favicon(path.resolve('./public/images/favicon.png')));
 // Servimos todo el contenido static de /public/api/changelog con el virtual path /changelog en la url
 router.use('/changelog', expressStatic);
 
-// Middleware para manejo de errores
+// Middleware para manejo de errores 404 y 500
 router.use((req, res, next) => {
     const err = new Error('Recurso no encontrado!');
     err.status = 404;
