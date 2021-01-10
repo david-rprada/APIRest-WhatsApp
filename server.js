@@ -24,7 +24,6 @@ app.listen(puerto, () => {
 });
 
 
-
-// Peticiones de cliente
-cliente.CrearMensajePOST();
+// Peticion de cliente
+//cliente.CrearMensajePOST();
 
