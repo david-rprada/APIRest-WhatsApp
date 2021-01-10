@@ -18,21 +18,21 @@ class WhatsAppController {
   static async getMensaje(req, res) {
     
     client.messages(req.params.sid).fetch()
-        .then(message => res.status(200).send(message))
+        .then(message => res.status(200).json(message))
         .catch(error => res.status(500).send(error));
   }
 
   static async getAllMensajes (req, res) {
     
     client.messages.list()
-      .then(messages => res.send(messages))
+      .then(messages => res.json(messages))
       .catch(error => res.status(500).send(error));
   }
 
   static async getAllMensajesPropiedad (req, res){
     
     client.messages.list()
-      .then(messages => res.send(messages.map((msg) => eval("msg." + req.params.propiedad))))
+      .then(messages => res.json(messages.map((msg) => eval("msg." + req.params.propiedad))))
       .catch(error => res.status(500).send(error));
   }
   
@@ -55,12 +55,12 @@ class WhatsAppController {
           let mensajesOrden = messages.sort((a,b) => new Date(b.dateSent) - new Date(a.dateSent));
 
           // Devolvemos el último mensaje
-          res.send(mensajesOrden[0]);
+          res.json(mensajesOrden[0]);
       })
       .catch(error => res.status(500).send(error));
     }
 
-    static async crearMensaje(req, res) {
+    static async crearMensajeGET(req, res) {
         
       // Leemos el número de pruebas del SandBox de WhatsApp
       let sandbox_number = process.env.WHATSAPP_SANDBOX_NUMBER;
@@ -73,8 +73,29 @@ class WhatsAppController {
         mediaUrl: req.params.mediaUrl
       })
       .then(message => { 
-        res.send("Enviado! El SID del mensaje es: " + message.sid);
-        console.log("Enviado! El SID del mensaje es: " + message.sid)
+        res.send("Enviado! El SID del mensaje es: " + message.sid + " (texto: " + req.params.texto + ")");
+        //console.log("Enviado! El SID del mensaje es: " + message.sid + " (" + req.params.texto + ")");
+      })
+      .catch(error => res.status(500).send(error));
+    
+      console.log("Enviando mensaje...");
+    }
+
+    static async crearMensajePOST(req, res) {
+          
+      // Leemos el número de pruebas del SandBox de WhatsApp
+      let sandbox_number = process.env.WHATSAPP_SANDBOX_NUMBER;
+    
+      // Crea el mensaje en WhatsApp
+      client.messages.create({
+        from: sandbox_number,
+        body: req.body.texto,
+        to: 'whatsapp:' + req.body.to,
+        mediaUrl: req.body.mediaUrl
+      })
+      .then(message => { 
+        res.json("Enviado! El SID del mensaje es: " + message.sid + " (texto: " + req.body.texto + ")");
+        //console.log("Enviado! El SID del mensaje es: " + message.sid + " (" + req.body.texto + ")");
       })
       .catch(error => res.status(500).send(error));
     

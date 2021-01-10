@@ -1,14 +1,13 @@
 // Importar módulos
 const dotenv = require('dotenv');
+const express = require('express');
+const cliente = require('./client');
 
 // Cargamos variables de entorno del archivo .env
 dotenv.config();
 
 // Set del puerto del web server al establecido por variable de entorno o por defecto 3000 
 const puerto = process.env.PORT || 3000;
-
-// Incluimos los módulos necesarios
-const express = require('express');
 
 // Instanciamos una web server de Express
 const app = new express();
@@ -24,4 +23,8 @@ app.listen(puerto, () => {
     console.log("Servidor escuchando en el puerto " + puerto + "...");
 });
 
+
+
+// Peticiones de cliente
+cliente.CrearMensajePOST();
 

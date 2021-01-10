@@ -10,3 +10,9 @@ node_modules/
 # ngrok
 ngrok.exe
 
+# test.js
+test.js
+
+# cliente de la API Rest
+client.js
+
