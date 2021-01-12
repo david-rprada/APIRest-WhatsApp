@@ -1,6 +1,7 @@
 
 // Importamos módulos
 const Twilio = require('twilio');
+const emoji = require('node-emoji');
 
 // Leemos credenciales de Twilio
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
@@ -8,6 +9,7 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 
 // Instanciamos un cliente de Twilio con las credenciales
 const client = new Twilio(accountSid, authToken);
+
 
 /**
  * @class WhatsAppController
@@ -82,7 +84,7 @@ class WhatsAppController {
     }
 
     static async crearMensajePOST(req, res) {
-          
+      
       // Leemos el número de pruebas del SandBox de WhatsApp
       let sandbox_number = process.env.WHATSAPP_SANDBOX_NUMBER;
     
@@ -103,12 +105,37 @@ class WhatsAppController {
     }
 
     static async recibirMensaje(req, res) {
-    
       console.log("Mensaje entrante!");
-          
+      
       // Twilio espera de vuelta en la respuesta un TwiML XML format diciendole como responder al mensaje (normalmente un texto)
       let twiml = new Twilio.twiml.MessagingResponse();
-      twiml.message("¡Buen intento! pero soy Alexia no Alexa. Esta API Rest es solo para notificaciones automáticas. Tal vez más adelante tendremos un bot que nos ayude a responder...");
+
+      // Leemos el texto del WhatsApp
+      const textoEntrada = req.body.Body;
+  
+      // Aplicamos expresiones regulares para detectar comandos
+      const cmdMisReuniones = /reuniones/;
+      const isCmdMisReuniones = cmdMisReuniones.test(textoEntrada);
+
+      const cmdMisTareas = /tareas/;
+      const isCmdMisTareas = cmdMisTareas.test(textoEntrada);
+
+      const cmdMisClases = /clases/;
+      const isCmdMisClases = cmdMisClases.test(textoEntrada);
+      
+      if (isCmdMisReuniones)
+        twiml.message("Hoy no tienes ninguna reunión. Disfruta del día! " + emoji.get('coffee'));
+      
+      else if (isCmdMisTareas)
+        twiml.message("Hoy tienes muchas tareas pendientes. Más adelante te daré la lista completa! " + emoji.get('clipboard'));
+      
+      else if (isCmdMisClases){
+        twiml.message("Hoy tienes: ");
+        twiml.message(emoji.get('blue_book') + " Matemáticas 014A a las 10:00 hrs");
+        twiml.message(emoji.get('blue_book') + " Ciencias naturales 014B a las 12:00 hrs");
+      }                        
+      else
+        twiml.message("¡Buen intento! pero no he encontrado ese comando. Prueba de nuevo...");
 
       // Enviamos el twiml de vuelta a Twilio
       res.writeHead(200, {'Content-Type': 'text/xml'});

@@ -11,6 +11,10 @@ const router = new Router();
 // Crear instancia de application/json parser
 const jsonParser = bodyParser.json()
 
+// Y la configuramos para poder leer ambos tipos de params en las peticiones POST
+router.use(bodyParser.json()); // json encoded bodies
+router.use(bodyParser.urlencoded({ extended: true })); // x-www-form-urlencoded
+
 //#region Definición de rutas
 
 // GET /
@@ -39,7 +43,7 @@ router.get("/GetUltimoMensaje", WhatsAppController.getUltimoMensaje);
 router.get("/CrearMensaje/:texto/:to/:mediaUrl?", WhatsAppController.crearMensajeGET);
 
 // POST /CrearMensaje {'texto': texto, 'to': to, 'mediaUrl': mediaUrl}
-router.post("/CrearMensaje", jsonParser, WhatsAppController.crearMensajePOST);
+router.post("/CrearMensaje", WhatsAppController.crearMensajePOST);
 
 // POST /MsgEntrante. Esta es la webhook url configurada en la consola de Twilio para llamar cuando llegue un WhatsApp a Twilio
 router.post("/MsgEntrante", WhatsAppController.recibirMensaje);
