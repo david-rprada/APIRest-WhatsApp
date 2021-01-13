@@ -117,36 +117,45 @@ class WhatsAppController {
       const cmdAlexia = /alexia/i;
       const isCmdAlexia = cmdAlexia.test(textoEntrada);
       
-      const cmdMisReuniones = /reunión|reuniones/;
-      const isCmdMisReuniones = cmdMisReuniones.test(textoEntrada);
+      const cmdMisEntrevistas = /entrevista|entrevistas/;
+      const isCmdMisEntrevistas = cmdMisEntrevistas.test(textoEntrada);
 
       const cmdMisTareas = /actividades|tareas/i;
       const isCmdMisTareas = cmdMisTareas.test(textoEntrada);
 
       const cmdMisClases = /clases/;
       const isCmdMisClases = cmdMisClases.test(textoEntrada);
+
+      const cmdContacto = /contacto/;
+      const isCmdContacto = cmdContacto.test(textoEntrada);
+
       
       // Si es un comando Alexia, lo procesamos
       if (isCmdAlexia)
       {
-        if (isCmdMisReuniones)
-          twiml.message("Hoy no tienes ninguna reunión. Disfruta del día! " + emoji.get('coffee'));
+        if (isCmdMisEntrevistas)
+          twiml.message("*Hoy* no tienes ninguna entrevista. Disfruta del día! " + emoji.get('coffee'));
         
         else if (isCmdMisTareas)
-          twiml.message("Hoy tienes muchas actividades/tareas pendientes. Más adelante te daré la lista completa! " + emoji.get('clipboard'));
+          twiml.message("*Hoy* tienes muchas actividades/tareas pendientes. ¡Más adelante te daré la lista completa! " + emoji.get('clipboard'));
         
         else if (isCmdMisClases){
-          twiml.message("Hoy tienes: ");
+          twiml.message("*Hoy* tienes: ");
           twiml.message(emoji.get('blue_book') + " Matemáticas 014A a las 10:00 hrs");
           twiml.message(emoji.get('blue_book') + " Ciencias naturales 014B a las 12:00 hrs");
-        }                        
+        }
+        else if (isCmdContacto){
+          twiml.message("¡Aquí tienes la información del contacto solicitado!");
+          twiml.message(emoji.get('male-student') + "Roberto Diaz Lopez: +34 612345678. Padre: Andres Diaz +34 698765432. Madre: Laura Lopez: +34 654123987");
+          twiml.message("Domicilio: Calle Sainz de Baranda nº11 4ºA, Madrid");
+        }
         else
-          twiml.message("¡Buen intento! pero no he encontrado ese comando Alexia. Prueba de nuevo...");
+          twiml.message("¡Buen intento! pero no he encontrado ese comando *Alexia*. Prueba de nuevo...");
       }
       
       // En caso contrario, avisamos que no ha reconocido un comando Alexia
       else
-        twiml.message("Para interactuar con el Alexia-bot " + emoji.get('robot_face') + ", por favor comienza tus comandos con la palabra Alexia");
+        twiml.message("Para interactuar con el bot de Alexia " + emoji.get('robot_face') + ", por favor comienza tus comandos con la palabra *Alexia*");
       
       // Enviamos el twiml de vuelta a Twilio
       res.writeHead(200, {'Content-Type': 'text/xml'});
