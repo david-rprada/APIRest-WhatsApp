@@ -10,6 +10,9 @@
 const favicon = require('serve-favicon');
 const path = require('path');
 
+// Router para la api (un módulo es siempre un archivo .js por eso encuentra el api.js sin poner ".js")
+const apiRouter = require('./api');
+
 // Requerimos solo los objetos { Router , static } (destructuring) de express y lo instanciamos
 const { Router, static } = require('express');
 const router = new Router();
@@ -21,9 +24,6 @@ router.use(favicon(path.resolve('./public/images/favicon.png')));
 // Aplicamos expressStatic como función de middleware para la ruta /changelog
 // Servimos todo el contenido static de /public/api/changelog con el virtual path /changelog en la url
 router.use('/changelog', expressStatic);
-
-// Router para la api (un módulo es siempre un archivo .js por eso encuentra el api.js sin poner ".js")
-const apiRouter = require('./api');
 
 // Le indicamos al router que utilice el router apiRouter para las url: / o bien /api (opcional)
 router.use('/:var(api)?', apiRouter);

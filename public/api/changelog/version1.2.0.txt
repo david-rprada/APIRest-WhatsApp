@@ -9,6 +9,5 @@ Version 1.2.0
 * chore: Añadir controlador para las operaciones sobre WhatsApp y separar lógica MVC 
 * feat: Pasar petición GET CrearMensaje a petición POST con un objeto json
 * feat: Estructura de comandos básicos (mockups) para un bot
-* feat: Añadir operación POST para enviar una remesa completa de mensajes. Utilizar package Joi para validación de objeto json de entrada.
-* feat: Añadir operación DELETE para borrar una remesa completa de mensajes
-* docs: Añadir a la documentación index.html de la API, las nuevas operaciones anteriores.
+* chore: Reestructurar directorios para crecer aplicación
+* chore: Añadir módulo cluster para permitir utilizar todos los nucleos de la CPU en PROD 

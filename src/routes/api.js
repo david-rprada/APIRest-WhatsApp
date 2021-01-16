@@ -20,7 +20,7 @@ router.use(bodyParser.urlencoded({ extended: true })); // x-www-form-urlencoded
 // GET /
 router.get("/", (req, res) => {
 
-    res.sendFile(path.resolve("./index.html"));
+    res.sendFile(path.resolve("./public/index.html"));
     //res.send('API Rest de mensajería en WhatsApp!')
 });
 
