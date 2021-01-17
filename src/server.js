@@ -5,7 +5,7 @@ dotenv.config();
 
 // Importamos modulos
 const app  = require('./app');
-const cliente = require('./client');
+//const cliente = require('./client');
 
 // Set del puerto del web server al establecido por variable de entorno o por defecto 3000 
 const puerto = process.env.PORT || 3000;
