@@ -11,3 +11,4 @@ Version 1.2.0
 * feat: Estructura de comandos básicos (mockups) para un bot
 * chore: Reestructurar directorios para crecer aplicación
 * chore: Añadir módulo cluster para permitir utilizar todos los nucleos de la CPU en PROD 
+* chore: Añadir CI/CD con GitHub Actions en Azure
