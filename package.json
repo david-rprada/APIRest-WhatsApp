@@ -4,7 +4,7 @@
   "description": "API Rest para mensajería con WhatsApp!",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
     "dev": "cross-env NODE_ENV=development nodemon server.js --inspect",
     "start-sin-azure": "cross-env NODE_ENV=production pm2 start server.js -i -0"
   },
