@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon ./src/server.js --inspect",
-    "start": "cross-env NODE_ENV=production pm2 start ./src/server.js -i -0"
+    "start-sin-azure": "cross-env NODE_ENV=production pm2 start ./src/server.js -i -0",
+    "start": "cross-env NODE_ENV=production node ./src/server.js -i -0"
   },
   "keywords": [
     "WhatsApp",
