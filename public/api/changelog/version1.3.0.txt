@@ -9,6 +9,5 @@ Version 1.3.0
 * docs: Añadir a la documentación index.html de la API, las nuevas operaciones anteriores.
 * chore: Desplegar la API en un contenedor Docker
 * fix: obtener número de versión actual de package.json
-* feat: Añadir protocolo https a nuestra API con certificados openSSL. 
-* chore: Probar si en local es posible utilizar las url variables de ngrok con el protocolo https.
+
 
