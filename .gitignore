@@ -5,7 +5,7 @@ node_modules/
 .npm
 
 # dotenv environment variables file
-.env
+#.env
 
 # ngrok
 ngrok.exe
