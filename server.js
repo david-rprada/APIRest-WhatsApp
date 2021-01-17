@@ -8,7 +8,7 @@ const app  = require('./src/app');
 //const cliente = require('./client');
 
 // Set del puerto del web server al establecido por variable de entorno o por defecto 3000 
-const puerto = process.env.PORT || 443;
+const puerto = process.env.PORT || 3000;
 
 // Iniciar el web server de Express en el puerto establecido en las variables de entorno o por defecto 3000
 app.listen(puerto, () => {
