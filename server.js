@@ -1,4 +1,6 @@
 
+const Circulo = require('./src/models/Circulo');
+
 // Cargamos variables de entorno del archivo .env
 const dotenv = require('dotenv');
 dotenv.config();
