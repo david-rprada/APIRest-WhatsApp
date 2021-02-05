@@ -2,7 +2,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-// Importamos modulos
+// Requerimos modulos
 const app  = require('./src/app');
 //const cliente = require('./src/client');
 
