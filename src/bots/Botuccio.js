@@ -24,7 +24,7 @@ class Botuccio {
     let twiml = new Twilio.twiml.MessagingResponse();
 
     // Aplicamos expresiones regulares para detectar comandos de Botuccio
-    const cmdMisReservas = /reservas/;
+    const cmdMisReservas = /reservas/i;
     const isCmdMisReservas = cmdMisReservas.test(cmd);
 
     // CmdMisReservas
@@ -36,7 +36,7 @@ class Botuccio {
           let reservas = messages.filter(
             (item) =>
               item.body.includes("OK!") && // Mensajes OK! de reserva
-              item.to.replace("whatsapp:", "") === from && // Destinados a mis
+              item.to.replace("whatsapp:", "") === from && // Destinados a mi
               isFuture(addDays(new Date(item.dateSent), 3)) // Los 3 últimos días
           );
 

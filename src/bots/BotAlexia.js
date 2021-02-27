@@ -22,16 +22,16 @@ class BotAlexia {
     let twiml = new Twilio.twiml.MessagingResponse();
 
     // Aplicamos expresiones regulares para detectar comandos en Alexia
-    const cmdMisEntrevistas = /entrevista|entrevistas/;
+    const cmdMisEntrevistas = /entrevista|entrevistas/i;
     const isCmdMisEntrevistas = cmdMisEntrevistas.test(cmd);
 
     const cmdMisTareas = /actividades|tareas/i;
     const isCmdMisTareas = cmdMisTareas.test(cmd);
 
-    const cmdMisClases = /clases/;
+    const cmdMisClases = /clases/i;
     const isCmdMisClases = cmdMisClases.test(cmd);
 
-    const cmdContacto = /contacto/;
+    const cmdContacto = /contacto/i;
     const isCmdContacto = cmdContacto.test(cmd);
 
     if (isCmdMisEntrevistas)
