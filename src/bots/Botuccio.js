@@ -1,8 +1,9 @@
 // Importamos módulos
 const Twilio = require("twilio");
 const emoji = require("node-emoji");
-const isFuture = require("date-fns/isFuture");
-var addDays = require("date-fns/addDays");
+//const isFuture = require("date-fns/isFuture");
+//var addDays = require("date-fns/addDays");
+const { isFuture, addDays } = require("date-fns");
 
 // Leemos credenciales de Twilio
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
@@ -30,7 +31,7 @@ class Botuccio {
     if (isCmdMisReservas) {
       // Leemos todos los mensajes de reserva OK! enviados al usuario en los últimos 3 días
       client.messages
-        .list()
+        .list({ limit: 100 }) // Solo consultamos los últimos 100 mensajes por rapidez
         .then((messages) => {
           let reservas = messages.filter(
             (item) =>
