@@ -123,10 +123,8 @@ class WhatsAppController {
     console.log("Mensaje entrante!");
 
     // Leemos el texto del WhatsApp
-    /* const cmd = req.body.Body;
-    const from = req.from; */
-    const cmd = "Botuccio dime mis reservas";
-    const from = "+34686579170";
+    const cmd = req.body.Body;
+    const from = req.from;
 
     // Aplicamos expresiones regulares para detectar el bot solicitado
     const cmdAlexia = /alexia/i;

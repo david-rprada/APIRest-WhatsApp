@@ -46,7 +46,11 @@ class Botuccio {
               "Estas son tus reservas para los *3 próximos días*: "
             );
             for (reserva of reservas) twiml.message(reserva.body);
-          } else twiml.message("No tienes reservas para los *3 próximos días*");
+          } else
+            twiml.message(
+              emoji.get("robot_face") +
+                " No tienes reservas para los *3 próximos días*"
+            );
 
           // Enviamos el twiml de vuelta a Twilio
           res.writeHead(200, { "Content-Type": "text/xml" });
