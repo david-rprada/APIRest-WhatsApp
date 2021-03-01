@@ -120,7 +120,7 @@ class WhatsAppController {
   }
 
   static async recibirMensaje(req, res) {
-    console.log("Mensaje entrante!");
+    console.log("¡Mensaje entrante!");
 
     // Leemos el texto del WhatsApp
     const cmd = req.body.Body;
