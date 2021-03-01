@@ -44,7 +44,7 @@ class Botuccio {
           if (reservas.length !== 0) {
             twiml.message(
               emoji.get("robot_face") +
-                " Estas son tus reservas para los *3 próximos días*: "
+                "Estas son tus reservas para los *3 próximos días*: "
             );
             for (let reserva of reservas) twiml.message(reserva.body);
           } else
