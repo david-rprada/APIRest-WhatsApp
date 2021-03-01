@@ -124,7 +124,7 @@ class WhatsAppController {
 
     // Leemos el texto del WhatsApp
     const cmd = req.body.Body;
-    const from = req.From;
+    const from = req.body.From;
 
     // Aplicamos expresiones regulares para detectar el bot solicitado
     const cmdAlexia = /alexia/i;
