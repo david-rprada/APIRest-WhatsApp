@@ -124,7 +124,9 @@ class WhatsAppController {
 
     // Leemos el texto del WhatsApp
     const cmd = req.body.Body;
-    const from = req.body.From || req.From || req.from;
+    //const from = req.body.From || req.From || req.from;
+
+    const from = "+34686579170";
 
     // Aplicamos expresiones regulares para detectar el bot solicitado
     const cmdAlexia = /alexia/i;
